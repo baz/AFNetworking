@@ -123,7 +123,7 @@ static dispatch_queue_t xml_request_operation_processing_queue() {
 - (void)cancel {
     [super cancel];
 
-    self.responseXMLParser.delegate = nil;
+    if (_responseXMLParser) self.responseXMLParser.delegate = nil;
 }
 
 #pragma mark - AFHTTPRequestOperation
