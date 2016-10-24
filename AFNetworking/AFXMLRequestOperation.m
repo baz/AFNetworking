@@ -102,7 +102,7 @@ static dispatch_queue_t xml_request_operation_processing_queue() {
 - (NSXMLDocument *)responseXMLDocument {
     if (!_responseXMLDocument && [self.responseData length] > 0 && [self isFinished]) {
         NSError *error = nil;
-		NSXMLDocumentContentKind options = floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_10 ? NSXMLDocumentTidyXML : 0;
+		NSXMLNodeOptions options = floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_10 ? NSXMLDocumentTidyXML : NSXMLNodeOptionsNone;
         self.responseXMLDocument = [[NSXMLDocument alloc] initWithData:self.responseData options:options error:&error];
         self.XMLError = error;
     }
