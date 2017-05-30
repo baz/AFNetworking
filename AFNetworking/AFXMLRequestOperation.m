@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "AFXMLRequestOperation.h"
+#import <AppKit/NSApplication.h>
 
 #include <Availability.h>
 
